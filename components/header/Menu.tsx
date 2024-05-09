@@ -5,7 +5,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { SearchBox } from './SearchBox'
+
 
 const Menu = () => {
   const { items, init } = useCartService()
@@ -29,9 +29,7 @@ const Menu = () => {
 
   return (
     <>
-      <div className="hidden md:block">
-        <SearchBox />
-      </div>
+     
       <div>
         <ul className="flex items-stretch">
           <i>
@@ -99,11 +97,11 @@ const Menu = () => {
                     tabIndex={0}
                     className="menu dropdown-content z-[1] p-2 shadow bg-base-300 rounded-box w-52 "
                   >
-                    {session.user.isAdmin && (
+                   {/* {session.user.isAdmin && (
                       <li onClick={handleClick}>
                         <Link href="/admin/dashboard">Admin Dashboard</Link>
                       </li>
-                    )}
+                    )}  */}
 
                     <li onClick={handleClick}>
                       <Link href="/order-history">Order history </Link>
