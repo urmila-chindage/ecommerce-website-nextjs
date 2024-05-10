@@ -19,6 +19,7 @@ export const POST = auth(async (...request: any) => {
     try {
       const { orderID } = await req.json()
       const captureData = await paypal.capturePayment(orderID)
+      console.log(orderID)
       order.isPaid = true
       order.paidAt = Date.now()
       order.paymentResult = {
