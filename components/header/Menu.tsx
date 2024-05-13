@@ -5,7 +5,8 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { SearchBox } from './SearchBox'
+import { SearchBox } from './SearchBox';
+import { Suspense } from 'react'
 
 const Menu = () => {
   const { items, init } = useCartService()
@@ -30,7 +31,9 @@ const Menu = () => {
   return (
     <>
     <div className="hidden md:block">
-        <SearchBox />
+       <Suspense>
+       <SearchBox />
+        </Suspense> 
       </div>
      
       <div>

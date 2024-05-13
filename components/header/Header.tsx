@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import Menu from './Menu'
-import { SearchBox } from './SearchBox'
+import { SearchBox } from './SearchBox';
+import { Suspense } from 'react'
 
 const Header = () => {
   return (
@@ -32,7 +33,9 @@ const Header = () => {
           <Menu />
         </div>
         <div className="bg-base-300 block md:hidden text-center pb-3">
+        <Suspense> 
           <SearchBox />
+        </Suspense>
         </div>
       </nav>
     </header>
