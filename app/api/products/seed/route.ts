@@ -5,12 +5,12 @@ import UserModel from '@/lib/models/UserModel'
 import { NextRequest, NextResponse } from 'next/server'
 
 export const GET = async (request: NextRequest) => {
-  const { users, products } = data
+  //const { users, products } = data
   await dbConnect()
-  await UserModel.deleteMany()
+  const users = await UserModel.deleteMany()
   await UserModel.insertMany(users)
 
-  await ProductModel.deleteMany()
+  const products = await ProductModel.deleteMany()
   await ProductModel.insertMany(products)
 
   return NextResponse.json({
