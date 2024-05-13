@@ -15,7 +15,7 @@ export const paypal = {
         purchase_units: [
           {
             amount: {
-              currency_code: 'inr',
+              currency_code: 'USD',
               value: price,
             },
           },

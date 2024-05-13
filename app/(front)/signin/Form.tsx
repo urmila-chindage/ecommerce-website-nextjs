@@ -15,6 +15,7 @@ const Form = () => {
 
   const params = useSearchParams()
   let callbackUrl = params.get('callbackUrl') || '/'
+  console.log(callbackUrl);
   const router = useRouter()
 
   const {

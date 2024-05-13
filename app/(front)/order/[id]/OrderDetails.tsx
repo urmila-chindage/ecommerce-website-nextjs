@@ -34,6 +34,7 @@ export default function OrderDetails({
   const { data: session } = useSession()
   console.log(session)
   const createPayPalOrder = async() => {
+    console.log(orderId)
     return await fetch(`/api/orders/${orderId}/create-paypal-order`, {
       method: 'POST',
       headers: {
@@ -41,6 +42,7 @@ export default function OrderDetails({
       },
     })
       .then((response) => response.json())
+     
       .then((order) => order.id)
   }
 
@@ -141,7 +143,7 @@ export default function OrderDetails({
                         </Link>
                       </td>
                       <td>{item.qty}</td>
-                      <td>${item.price}</td>
+                      <td>₹{item.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -158,25 +160,25 @@ export default function OrderDetails({
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Items</div>
-                    <div>${itemsPrice}</div>
+                    <div>₹{itemsPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Tax</div>
-                    <div>${taxPrice}</div>
+                    <div>₹{taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Shipping</div>
-                    <div>${shippingPrice}</div>
+                    <div>₹{shippingPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Total</div>
-                    <div>${totalPrice}</div>
+                    <div>₹{totalPrice}</div>
                   </div>
                 </li>
 
