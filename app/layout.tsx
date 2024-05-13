@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from '@/components/Providers'
 import Header from '@/components/header/Header'
-
+import DrawerButton from '@/components/DrawerButton'
+import Sidebar from '@/components/Sidebar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <div className="drawer">
-            
+          <DrawerButton />
             <div className="drawer-content">
               <div className="min-h-screen flex flex-col">
                 <Header />
@@ -39,7 +40,7 @@ export default function RootLayout({
                 aria-label="close sidebar"
                 className="drawer-overlay"
               ></label>
-             
+             <Sidebar />
             </div>
           </div>
         </Providers>
